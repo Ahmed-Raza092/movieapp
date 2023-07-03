@@ -15,12 +15,12 @@ namespace MvcMovie.Models
                     DbContextOptions<MvcMovieContext>>()))
             {
                 // Look for any movies.
-                if (context.Movie.Any())
+                if (context.Movies.Any())
                 {
                     return;   // DB has been seeded
                 }
 
-                context.Movie.AddRange(
+                context.Movies.AddRange(
                     new Movie
                     {
                         Title = "When Harry Met Sally",

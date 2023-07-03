@@ -14,6 +14,10 @@ namespace MvcMovie.Data
         {
         }
 
-        public DbSet<MvcMovie.Models.Movie> Movie { get; set; } = default!;
+        public DbSet<Movie> Movies { get; set; } 
+        public DbSet<Car> Cars { get; set; }
+        public DbSet<Make> Makes { get; set; }
+        public DbSet<Model> Models { get; set; }
+        public DbSet<CarType> CarTypes { get; set; }
     }
 }

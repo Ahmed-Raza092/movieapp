@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\A.H.M.E.D\\source\\repos\\MvcMovie\\MvcMovie\\MvcMovie.csproj": {}
+    "C:\\Users\\A.H.M.E.D\\source\\repos\\Ahmed-Raza092\\movieapp\\MvcMovie.csproj": {}
   },
   "projects": {
-    "C:\\Users\\A.H.M.E.D\\source\\repos\\MvcMovie\\MvcMovie\\MvcMovie.csproj": {
+    "C:\\Users\\A.H.M.E.D\\source\\repos\\Ahmed-Raza092\\movieapp\\MvcMovie.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\A.H.M.E.D\\source\\repos\\MvcMovie\\MvcMovie\\MvcMovie.csproj",
+        "projectUniqueName": "C:\\Users\\A.H.M.E.D\\source\\repos\\Ahmed-Raza092\\movieapp\\MvcMovie.csproj",
         "projectName": "MvcMovie",
-        "projectPath": "C:\\Users\\A.H.M.E.D\\source\\repos\\MvcMovie\\MvcMovie\\MvcMovie.csproj",
+        "projectPath": "C:\\Users\\A.H.M.E.D\\source\\repos\\Ahmed-Raza092\\movieapp\\MvcMovie.csproj",
         "packagesPath": "C:\\Users\\A.H.M.E.D\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\A.H.M.E.D\\source\\repos\\MvcMovie\\MvcMovie\\obj\\",
+        "outputPath": "C:\\Users\\A.H.M.E.D\\source\\repos\\Ahmed-Raza092\\movieapp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\A.H.M.E.D\\AppData\\Roaming\\NuGet\\NuGet.Config",
