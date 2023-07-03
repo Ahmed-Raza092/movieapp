@@ -18,3 +18,6 @@ namespace MvcMovie.Models
         public decimal Price { get; set; }
     }
 }
+
+
+//Movie Model
