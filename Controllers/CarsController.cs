@@ -22,9 +22,8 @@ namespace MvcMovie.Controllers
         // GET: Cars
         public async Task<IActionResult> Index()
         {
-              return _context.Cars != null ? 
-                          View(await _context.Cars.ToListAsync()) :
-                          Problem("Entity set 'MvcMovieContext.Car'  is null.");
+            var _cars = await _context.Cars.Include(x => x.Make).Include(x => x.CarType).Include(x => x.Model).ToListAsync();
+            return View(_cars);
         }
 
         // GET: Cars/Details/5
@@ -48,7 +47,12 @@ namespace MvcMovie.Controllers
         // GET: Cars/Create
         public IActionResult Create()
         {
-            return View();
+            var _car = new Car();
+            _car.CarTypes = _context.CarTypes.ToList();
+            _car.Makes = _context.Makes.ToList();
+            _car.Models = _context.Models.ToList();
+
+            return View(_car);
         }
 
         // POST: Cars/Create
@@ -56,7 +60,7 @@ namespace MvcMovie.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Make,Model,Type,Cost")] Car car)
+        public async Task<IActionResult> Create([FromForm] Car car)
         {
             if (ModelState.IsValid)
             {

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MvcMovie.Data;
 
@@ -11,9 +12,11 @@ using MvcMovie.Data;
 namespace MvcMovie.Migrations
 {
     [DbContext(typeof(MvcMovieContext))]
-    partial class MvcMovieContextModelSnapshot : ModelSnapshot
+    [Migration("20230703130544_Relationships_Updated")]
+    partial class Relationships_Updated
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -30,28 +33,22 @@ namespace MvcMovie.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("CarTypeId")
-                        .HasColumnType("int");
-
                     b.Property<int>("Cost")
                         .HasColumnType("int");
 
-                    b.Property<int?>("MakeId")
-                        .HasColumnType("int");
+                    b.Property<string>("Make")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("ModelId")
-                        .HasColumnType("int");
+                    b.Property<string>("Model")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Type")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
-
-                    b.HasIndex("CarTypeId");
-
-                    b.HasIndex("MakeId");
-
-                    b.HasIndex("ModelId");
 
                     b.ToTable("Cars");
                 });
@@ -130,27 +127,6 @@ namespace MvcMovie.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Movies");
-                });
-
-            modelBuilder.Entity("MvcMovie.Models.Car", b =>
-                {
-                    b.HasOne("MvcMovie.Models.CarType", "CarType")
-                        .WithMany()
-                        .HasForeignKey("CarTypeId");
-
-                    b.HasOne("MvcMovie.Models.Make", "Make")
-                        .WithMany()
-                        .HasForeignKey("MakeId");
-
-                    b.HasOne("MvcMovie.Models.Model", "Model")
-                        .WithMany()
-                        .HasForeignKey("ModelId");
-
-                    b.Navigation("CarType");
-
-                    b.Navigation("Make");
-
-                    b.Navigation("Model");
                 });
 #pragma warning restore 612, 618
         }

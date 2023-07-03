@@ -22,7 +22,7 @@
                 @Html.DisplayNameFor(model => model.Model)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Type)
+                @Html.DisplayNameFor(model => model.CarType)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Cost)
@@ -37,13 +37,13 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Make)
+                @Html.DisplayFor(modelItem => item.Make.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Model)
+                @Html.DisplayFor(modelItem => item.Model.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Type)
+                    @Html.DisplayFor(modelItem => item.CarType.Name)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Cost)
